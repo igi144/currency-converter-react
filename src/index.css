@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 18px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Mukta', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  /* background-image: url("../jpg/currencies.jpg");
+  background-size: cover */
+  background-color: #e3e3e3;
+}
+
+.form {
+  border-radius: 15px;
+  border-color: teal;
+  background-color: white;
+  margin: 10px auto;
+  margin-top: 150px;
+}
+
+.form__header {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px
+}
+
+.form__label {
+  padding-left: 20px;
+}
+
+.form__field {
+  background-color: #0000000d;
+  border-radius: 5px;
+  border: solid black;
+  margin-left: 5px;
+  height: 30px;
+  width: 230px;
+  padding-left: 5px;
 }
