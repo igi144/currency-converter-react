@@ -1,9 +1,20 @@
 import "./style.css"
 
-const Buttons = () => (
-    <div class="buttons"><button class="button button--count">Przelicz</button>
-        <button class="button button--reset" type="reset">Wyzeruj</button>
-    </div>
+const Buttons = ({calculateResult}) => (
+    <>
+        <button className="button button--count" onClick={()=> calculateResult()}>
+            Przelicz
+        </button>
+        <button className="button button--reset" type="reset">
+            Wyzeruj
+        </button>
+    </>
+
 )
 
 export default Buttons
+
+
+
+
+
