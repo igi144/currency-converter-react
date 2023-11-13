@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <form className="form" onSubmit={onFormSubmit}>
-        <h1 className="form__header">Kalkulator waluty Euro na PLN</h1>
+        <h1 className="form__header">Kalkulator walut</h1>
         <p>
           <label><span className="form__label">Kwota:</span></label>
           <input
