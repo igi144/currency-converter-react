@@ -4,7 +4,13 @@ import { useState } from "react"
 
 function App() {
 
-  const [currency, setCurrency] = useState("")
+  const values = [
+    { id: 1, cash: "Euro", name: "EUR", rate: 4.43 },
+    { id: 2, cash: "Dolar amerykański", name: "USD", rate: 4.13 },
+    { id: 3, cash: "Funt brytyjski", name: "GBP", rate: 5.05 },
+  ]
+
+  const [currency, setCurrency] = useState("Euro")
   const [numbers, setNumbers] = useState("")
   const [result, setResult] = useState("")
 
@@ -12,23 +18,21 @@ function App() {
     event.preventDefault();
   }
 
+
   const calculateResult = () => {
-    if (currency === "Euro") {
-      setResult(numbers * 4.43)
-    }
+    values.find(cash => {
+      if (currency === "Euro") {
+        setResult(numbers * cash.rate)
+      }
 
-    if (currency === "Dolar amerykański") {
-      setResult(numbers * 4.13)
-    }
-
-    if (currency === "Funt brytyjski") {
-      setResult(numbers * 5.05)
-    }};
+      return null
+    })
+  }
 
   return (
     <>
       <form className="form" onSubmit={onFormSubmit}>
-        <h1 className="form__header">Kalkulator walut</h1>
+        <h1 className="form__header">Kalkulator waluty Euro na PLN</h1>
         <p>
           <label><span className="form__label">Kwota:</span></label>
           <input
@@ -43,7 +47,6 @@ function App() {
         <p>
           <label className="form__label">Waluta</label>
           <select className="form__field" value={currency} onChange={(event) => setCurrency(event.target.value)}>
-            <option>Wybierz walutę</option>
             <option>Euro</option>
             <option>Dolar amerykański</option>
             <option>Funt brytyjski</option>
