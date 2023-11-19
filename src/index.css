@@ -14,6 +14,7 @@ body {
   background-image: url("../jpg/currencies.jpg");
   background-size: cover;
   background-color: #e3e3e3;
+  font-family: 'Lato', sans-serif;
 }
 
 .form {
@@ -21,6 +22,7 @@ body {
   background-color: white;
   margin: 10px auto;
   margin-top: 150px;
+
 }
 
 .form__header {
