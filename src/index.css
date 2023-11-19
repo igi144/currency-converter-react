@@ -11,17 +11,12 @@ body {
   padding: 20px;
   max-width: 700px;
   margin: 0 auto;
-  font-family: 'Lato', sans-serif;
-  font-family: 'Libre Franklin', sans-serif;
-  font-family: 'Mukta', sans-serif;
-  font-family: 'PT Sans', sans-serif;
-  /* background-image: url("../jpg/currencies.jpg");
-  background-size: cover */
+  background-image: url("../jpg/currencies.jpg");
+  background-size: cover;
   background-color: #e3e3e3;
 }
 
 .form {
-  border-radius: 15px;
   border-color: teal;
   background-color: white;
   margin: 10px auto;
@@ -40,7 +35,6 @@ body {
 
 .form__field {
   background-color: #0000000d;
-  border-radius: 5px;
   border: solid black;
   margin-left: 5px;
   height: 30px;
