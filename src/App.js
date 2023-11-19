@@ -10,11 +10,11 @@ function App() {
     { id: 1, cash: "Euro", name: "EUR", rate: 4.43 },
     { id: 2, cash: "Dolar amerykański", name: "USD", rate: 4.13 },
     { id: 3, cash: "Funt brytyjski", name: "GBP", rate: 5.05 },
-  ]
+  ];
 
-  const [currency, setCurrency] = useState("Euro")
-  const [numbers, setNumbers] = useState("")
-  const [result, setResult] = useState("")
+  const [currency, setCurrency] = useState("Euro");
+  const [numbers, setNumbers] = useState("");
+  const [result, setResult] = useState("");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -35,7 +35,7 @@ function App() {
     setCurrency("Euro")
     setNumbers("")
     setResult("")
-  }
+  };
 
   return (
     <>
@@ -45,14 +45,14 @@ function App() {
           <Label
             className="form__label"
             title={"Kwota:"} />
-          <Input setNumbers={setNumbers} />
+          <Input setNumbers={setNumbers} numbers={numbers} />
         </p>
         <p>
           <Label
             className="form__label"
             title={"Waluta:"}
           />
-          <SelectField setCurrency={setCurrency} />
+          <SelectField setCurrency={setCurrency} currency={currency} />
         </p>
         <Label result={result} title={"Przelicznik na PLN:"} />
         <div className="buttons">
