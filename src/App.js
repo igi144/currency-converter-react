@@ -18,16 +18,16 @@ function App() {
     event.preventDefault();
   }
 
-
   const calculateResult = () => {
-    values.find(cash => {
-      if (currency === "Euro") {
-        setResult(numbers * cash.rate)
-      }
+    const isCurrency = values.find(({ cash }) => cash === currency);
 
-      return null
-    })
-  }
+    if (isCurrency) {
+      setResult(numbers * isCurrency.rate)
+    }
+    else {
+      console.error("Currency not found")
+    }
+  };
 
   return (
     <>
