@@ -3,6 +3,7 @@ import { useState } from "react"
 import Label from "./Label"
 import Input from "./Input"
 import SelectField from "./SelectField"
+import FormTitle from "./FormTitle"
 
 function App() {
 
@@ -40,7 +41,7 @@ function App() {
   return (
     <>
       <form className="form" onSubmit={onFormSubmit}>
-        <h1 className="form__header">Kalkulator waluty Euro na PLN</h1>
+        <FormTitle />
         <p>
           <Label
             className="form__label"
@@ -48,13 +49,11 @@ function App() {
           <Input setNumbers={setNumbers} numbers={numbers} />
         </p>
         <p>
-          <Label
-            className="form__label"
-            title={"Waluta:"}
+          <Label title={"Waluta:"}
           />
           <SelectField setCurrency={setCurrency} currency={currency} />
         </p>
-        <Label result={result} title={"Przelicznik na PLN:"} />
+        <Label title={"Przelicznik na PLN:"} result={result} />
         <div className="buttons">
           <Buttons calculateResult={calculateResult} resetForm={resetForm} />
         </div>
