@@ -1,11 +1,11 @@
 import "./style.css"
 
-const Buttons = ({calculateResult}) => (
+const Buttons = ({calculateResult, resetForm}) => (
     <>
         <button className="button button--count" onClick={()=> calculateResult()}>
             Przelicz
         </button>
-        <button className="button button--reset" type="reset">
+        <button className="button button--reset" onClick={resetForm}>
             Wyzeruj
         </button>
     </>

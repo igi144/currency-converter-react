@@ -29,6 +29,12 @@ function App() {
     }
   };
 
+  const resetForm = () => {
+    setCurrency("Euro")
+    setNumbers("")
+    setResult("")
+  }
+
   return (
     <>
       <form className="form" onSubmit={onFormSubmit}>
@@ -57,7 +63,7 @@ function App() {
           <strong> {result}</strong>
         </label>
         <div className="buttons">
-          <Buttons calculateResult={calculateResult} />
+          <Buttons calculateResult={calculateResult} resetForm={resetForm} />
         </div>
       </form>
     </>
