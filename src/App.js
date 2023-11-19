@@ -1,6 +1,8 @@
-
 import Buttons from "./Buttons"
 import { useState } from "react"
+import Label from "./Label"
+import Input from "./Input"
+import SelectField from "./SelectField"
 
 function App() {
 
@@ -40,28 +42,19 @@ function App() {
       <form className="form" onSubmit={onFormSubmit}>
         <h1 className="form__header">Kalkulator waluty Euro na PLN</h1>
         <p>
-          <label><span className="form__label">Kwota:</span></label>
-          <input
-            className="form__field"
-            required type="number"
-            min="0.1"
-            step="any"
-            value={numbers}
-            onChange={(event) => setNumbers(event.target.value)}
-          />
+          <Label
+            className="form__label"
+            title={"Kwota:"} />
+          <Input setNumbers={setNumbers} />
         </p>
         <p>
-          <label className="form__label">Waluta</label>
-          <select className="form__field" value={currency} onChange={(event) => setCurrency(event.target.value)}>
-            <option>Euro</option>
-            <option>Dolar amerykański</option>
-            <option>Funt brytyjski</option>
-          </select>
+          <Label
+            className="form__label"
+            title={"Waluta:"}
+          />
+          <SelectField setCurrency={setCurrency} />
         </p>
-        <label className="form__label form__label--result">
-          <span>Przelicznik na PLN:</span>
-          <strong> {result}</strong>
-        </label>
+        <Label result={result} title={"Przelicznik na PLN:"} />
         <div className="buttons">
           <Buttons calculateResult={calculateResult} resetForm={resetForm} />
         </div>
