@@ -1,11 +1,11 @@
-const Input = ({setNumbers, numbers}) => (
+const Input = ({setAmount, amount}) => (
     <input
         className="form__field form__field--value"
         required type="number"
         min="0.1"
         step="any"
-        value={numbers}
-        onChange={(event) => setNumbers(event.target.value)}
+        value={amount}
+        onChange={(event) => setAmount(event.target.value)}
     />
 )
 

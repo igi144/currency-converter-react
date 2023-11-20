@@ -1,8 +1,8 @@
 import "./style.css"
 
-const Buttons = ({calculateResult, resetForm}) => (
+const Buttons = ({ calculateResult, resetForm }) => (
     <>
-        <button className="button button--count" onClick={()=> calculateResult()}>
+        <button className="button button--count" onClick={calculateResult}>
             Przelicz
         </button>
         <button className="button button--reset" onClick={resetForm}>

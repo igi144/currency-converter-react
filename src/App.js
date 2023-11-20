@@ -3,12 +3,17 @@ import { useState } from "react"
 import Label from "./Label"
 import Input from "./Input"
 import SelectField from "./SelectField"
-import FormTitle from "./FormTitle"
-import currencies from "./Currencies"
+import FormHeader from "./FormHeader"
 
 function App() {
-  const [currency, setCurrency] = useState(currencies[0].cash);
-  const [numbers, setNumbers] = useState("");
+  const currencies = [
+    { id: 1, name: "Euro", symbol: "EUR", rate: 4.43 },
+    { id: 2, name: "Dolar amerykański", symbol: "USD", rate: 4.13 },
+    { id: 3, name: "Funt brytyjski", symbol: "GBP", rate: 5.05 },
+  ];
+
+  const [currency, setCurrency] = useState(currencies[0].name);
+  const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
 
   const onFormSubmit = (event) => {
@@ -16,31 +21,32 @@ function App() {
   }
 
   const calculateResult = () => {
-    const isCurrency = currencies.find(({ cash }) => cash === currency);
+    const selectedCurrency = currencies.find(({ name }) => name === currency);
 
-    if (isCurrency) {
-      setResult(numbers * isCurrency.rate)
+    if (!selectedCurrency ) {
+      console.error("Currency not found")
+      return;
     }
     else {
-      console.error("Currency not found")
+      setResult(amount * selectedCurrency.rate)
     }
   };
 
   const resetForm = () => {
     setCurrency("Euro")
-    setNumbers("")
+    setAmount("")
     setResult("")
   };
 
   return (
     <>
       <form className="form" onSubmit={onFormSubmit}>
-        <FormTitle />
+        <FormHeader />
         <p>
           <Label
             className="form__label"
             title={"Kwota:"} />
-          <Input setNumbers={setNumbers} numbers={numbers} />
+          <Input setAmount={setAmount} amount={amount} />
         </p>
         <p>
           <Label title={"Waluta:"}
