@@ -4,16 +4,10 @@ import Label from "./Label"
 import Input from "./Input"
 import SelectField from "./SelectField"
 import FormTitle from "./FormTitle"
+import currencies from "./Currencies"
 
 function App() {
-
-  const values = [
-    { id: 1, cash: "Euro", name: "EUR", rate: 4.43 },
-    { id: 2, cash: "Dolar amerykański", name: "USD", rate: 4.13 },
-    { id: 3, cash: "Funt brytyjski", name: "GBP", rate: 5.05 },
-  ];
-
-  const [currency, setCurrency] = useState("Euro");
+  const [currency, setCurrency] = useState(currencies[0].cash);
   const [numbers, setNumbers] = useState("");
   const [result, setResult] = useState("");
 
@@ -22,7 +16,7 @@ function App() {
   }
 
   const calculateResult = () => {
-    const isCurrency = values.find(({ cash }) => cash === currency);
+    const isCurrency = currencies.find(({ cash }) => cash === currency);
 
     if (isCurrency) {
       setResult(numbers * isCurrency.rate)
