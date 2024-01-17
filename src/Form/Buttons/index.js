@@ -9,4 +9,4 @@ export const Buttons = ({calculateResult, resetForm}) => (
             Wyzeruj
         </button>
     </div>
-)
+);

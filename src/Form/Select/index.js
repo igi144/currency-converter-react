@@ -10,4 +10,4 @@ export const Select = ({setCurrency, currency}) => (
                 {currency.name}
             </option>)}
     </select>
-)
+);

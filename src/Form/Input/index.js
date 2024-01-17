@@ -7,4 +7,4 @@ export const Input = ({setAmount, amount}) => (
         value={amount}
         onChange={(event) => setAmount(event.target.value)}
     />
-)
+);

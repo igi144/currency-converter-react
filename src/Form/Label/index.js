@@ -3,4 +3,4 @@ export const Label = ({title, extraContent}) => (
         {title}
         {extraContent}
     </label>
-)
+);

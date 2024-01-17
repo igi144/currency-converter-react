@@ -9,4 +9,4 @@ export const ShowDate = () => {
     return (
         <div className="form__date">Dzisiaj jest {currentDay}, {currentHour}</div>
     )
-}
+};
