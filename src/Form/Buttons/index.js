@@ -1,12 +1,13 @@
-import "./style.css" 
+import { Section } from "./styled"
+import { SectionButtons } from "./styled"
 
 export const Buttons = ({calculateResult, resetForm}) => (
-    <div className="buttons">
-        <button className="button button--count" onClick={calculateResult}>
+    <Section>
+        <SectionButtons $count onClick={calculateResult}>
             Przelicz
-        </button>
-        <button className="button button--reset" onClick={resetForm}>
+        </SectionButtons>
+        <SectionButtons $remove onClick={resetForm}>
             Wyzeruj
-        </button>
-    </div>
+        </SectionButtons>
+    </Section>
 );
