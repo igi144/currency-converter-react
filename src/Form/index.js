@@ -1,33 +1,16 @@
-import { useState, useEffect } from "react"
-import { ShowDate } from "./ShowDate"
 import { Input } from "./Input"
 import { Buttons } from "./Buttons"
 import { Label } from "./Label"
 import { Select } from "./Select"
+import { Clock } from "./ShowDate"
 
 export const Form = (
   { resetForm, calculateResult, result, setCurrency, currency, setAmount, amount, onFormSubmit, }
 ) => {
 
-  const [timer, setTimer] = useState()
-
-  useEffect(() => {
-    const myInterval = setInterval
-
-    setTimer(() => {
-      myInterval(() => {
-        setTimer(count => count + 1)
-      })
-    })
-
-    return () => {
-      clearInterval(myInterval)
-    }
-  }, [timer])
-
   return (
     <form className="form" onSubmit={onFormSubmit}>
-      <ShowDate />
+      <Clock />
       <h1 className="form__header">Kalkulator waluty Euro na PLN</h1>
       <p>
         <Label
