@@ -1,5 +1,5 @@
-import "./style.css"
 import { useCurrentDate } from "./useCurrentDate";
+import { CurrentTime } from "./styled"
 
 export const Clock = () => {
     const { time } = useCurrentDate()
@@ -7,6 +7,6 @@ export const Clock = () => {
     const currentDay = time.toLocaleString("pl", { weekday: "long", day: "numeric", month: "long" })
 
     return (
-        <div className="form__date">Dzisiaj jest {currentDay}, {currentHour} </div>
+        <CurrentTime>Dzisiaj jest {currentDay}, {currentHour} </CurrentTime>
     )
-};
+};  
