@@ -11,15 +11,24 @@ function App() {
     event.preventDefault();
   }
 
+
+
   const calculateResult = () => {
     const selectedCurrency = currencies.find(({ name }) => name === currency);
+
+    const positiveValue = () => {
+      if (amount <= 0) {
+        return
+      }
+      return amount * selectedCurrency.rate
+    }
 
     if (!selectedCurrency) {
       console.error("Currency not found")
       return;
     }
     else {
-      setResult(amount * selectedCurrency.rate)
+      setResult(positiveValue)
     }
   };
 
