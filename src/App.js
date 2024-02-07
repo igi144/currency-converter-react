@@ -11,8 +11,6 @@ function App() {
     event.preventDefault();
   }
 
-
-
   const calculateResult = () => {
     const selectedCurrency = currencies.find(({ name }) => name === currency);
 
@@ -39,17 +37,15 @@ function App() {
   };
 
   return (
-    <>
-      <Form
-        resetForm={resetForm}
-        calculateResult={calculateResult}
-        result={result}
-        setCurrency={setCurrency}
-        currency={currency}
-        setAmount={setAmount}
-        amount={amount}
-        onFormSubmit={onFormSubmit} />
-    </>
+    <Form
+      resetForm={resetForm}
+      calculateResult={calculateResult}
+      result={result}
+      setCurrency={setCurrency}
+      currency={currency}
+      setAmount={setAmount}
+      amount={amount}
+      onFormSubmit={onFormSubmit} />
   );
 };
 
