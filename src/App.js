@@ -7,6 +7,12 @@ function App() {
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
 
+  fetch("currency.json").then(response => {
+    response.json().then(value => {
+      console.log(value)
+    })
+  })
+
   const onFormSubmit = (event) => {
     event.preventDefault();
   }
