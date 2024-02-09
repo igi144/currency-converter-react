@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { currencies } from "./currencies";
 import { Form } from "./Form";
 
@@ -7,11 +7,13 @@ function App() {
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
 
-  fetch("currency.json").then(response => {
-    response.json().then(value => {
-      console.log(value)
+  useEffect(() => {
+    fetch("/currency.json").then(response => {
+      response.json().then(value => {
+        console.log(value)
+      })
     })
-  })
+  }, []);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
