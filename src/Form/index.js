@@ -5,7 +5,7 @@ import { Select } from "./Select"
 import { Clock } from "./ShowDate"
 
 export const Form = (
-  { resetForm, calculateResult, result, setCurrency, currency, setAmount, amount, onFormSubmit, }
+  { resetForm, calculateResult, result, setCurrency, currency, setAmount, amount, onFormSubmit, apiCurrencies }
 ) => {
 
   return (
@@ -22,7 +22,7 @@ export const Form = (
         <Label
           className="form__label form__label--result"
           title="Waluta:" />
-        <Select setCurrency={setCurrency} currency={currency} />
+        <Select setCurrency={setCurrency} currency={currency} apiCurrencies={apiCurrencies} />
       </p>
       <Label
         className="form__label form__label--result"
