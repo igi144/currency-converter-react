@@ -3,7 +3,7 @@ import { Form } from "./Form";
 
 const useApiHook = () => {
   const [apiCurrenciesData, setApiCurrenciesData] = useState([])
-
+  const [apiLastDate, setApiLastDate] = useState()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,11 +12,12 @@ const useApiHook = () => {
       const valuesData = responseToJson.data
 
       setApiCurrenciesData(Object.values(valuesData))
+      setApiLastDate(responseToJson.meta.last_updated_at)
     }
     fetchData();
   }, []);
 
-  return { apiCurrenciesData }
+  return { apiCurrenciesData, apiLastDate }
 }
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
   const [currency, setCurrency] = useState("CAD");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
-  const { apiCurrenciesData } = useApiHook()
+  const { apiCurrenciesData, apiLastDate } = useApiHook()
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -51,13 +52,14 @@ function App() {
   };
 
   const resetForm = () => {
-    setCurrency("Euro")
+    setCurrency("CAD")
     setAmount("")
     setResult("")
   };
 
   return (
     <Form
+      apiLastDate={apiLastDate}
       apiCurrenciesData={apiCurrenciesData}
       resetForm={resetForm}
       setCurrency={setCurrency}

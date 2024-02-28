@@ -3,9 +3,20 @@ import { Buttons } from "./Buttons"
 import { Label } from "./Label"
 import { Select } from "./Select"
 import { Clock } from "./ShowDate"
+import { LastUpdatedData } from "./LastUpdatedData"
 
 export const Form = (
-  { resetForm, calculateResult, result, setCurrency, currency, setAmount, amount, onFormSubmit, apiCurrenciesData }
+  { resetForm,
+    calculateResult,
+    result,
+    setCurrency,
+    currency,
+    setAmount,
+    amount,
+    onFormSubmit,
+    apiCurrenciesData,
+    apiLastDate
+  }
 ) => {
 
   return (
@@ -33,6 +44,7 @@ export const Form = (
         calculateResult={calculateResult}
         resetForm={resetForm}
       />
+      <LastUpdatedData apiLastDate={apiLastDate} />
     </form >
   )
 };
