@@ -2,16 +2,8 @@ import { useEffect, useState } from "react"
 // import { currencies } from "./currencies";
 import { Form } from "./Form";
 
-function App() {
-
+const useApiHook = () => {
   const [apiCurrencies, setApiCurrencies] = useState([])
-  const [currency, setCurrency] = useState("CAD");
-  const [amount, setAmount] = useState("");
-  const [result, setResult] = useState("");
-
-  console.log(apiCurrencies)
-
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +15,16 @@ function App() {
     }
     fetchData();
   }, []);
+
+  return { apiCurrencies }
+}
+
+function App() {
+
+  const [currency, setCurrency] = useState("CAD");
+  const [amount, setAmount] = useState("");
+  const [result, setResult] = useState("");
+  const { apiCurrencies } = useApiHook()
 
   const onFormSubmit = (event) => {
     event.preventDefault();
