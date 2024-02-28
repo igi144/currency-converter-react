@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-// import { currencies } from "./currencies";
 import { Form } from "./Form";
 
 const useApiHook = () => {
-  const [apiCurrencies, setApiCurrencies] = useState([])
+  const [apiCurrenciesData, setApiCurrenciesData] = useState([])
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,12 +11,12 @@ const useApiHook = () => {
       const responseToJson = await response.json();
       const valuesData = responseToJson.data
 
-      setApiCurrencies(Object.values(valuesData))
+      setApiCurrenciesData(Object.values(valuesData))
     }
     fetchData();
   }, []);
 
-  return { apiCurrencies }
+  return { apiCurrenciesData }
 }
 
 function App() {
@@ -24,14 +24,14 @@ function App() {
   const [currency, setCurrency] = useState("CAD");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
-  const { apiCurrencies } = useApiHook()
+  const { apiCurrenciesData } = useApiHook()
 
   const onFormSubmit = (event) => {
     event.preventDefault();
   }
 
   const calculateResult = () => {
-    const selectedCurrency = apiCurrencies.find(({ code }) => code === currency);
+    const selectedCurrency = apiCurrenciesData.find(({ code }) => code === currency);
     const finalResult = amount * selectedCurrency.value
 
     const positiveValue = () => {
@@ -58,7 +58,7 @@ function App() {
 
   return (
     <Form
-      apiCurrencies={apiCurrencies}
+      apiCurrenciesData={apiCurrenciesData}
       resetForm={resetForm}
       setCurrency={setCurrency}
       currency={currency}

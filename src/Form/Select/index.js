@@ -1,8 +1,6 @@
-// import { currencies } from "../../currencies";
-
-export const Select = ({ setCurrency, currency, apiCurrencies }) => (
+export const Select = ({ setCurrency, currency, apiCurrenciesData }) => (
     <select className="form__field" value={currency} onChange={(event) => setCurrency(event.target.value)}>
-        {apiCurrencies.map(value =>
+        {apiCurrenciesData.map(value =>
             <option
                 key={value.code}
                 value={value.code}>
