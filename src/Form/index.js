@@ -26,7 +26,7 @@ export const Form = (
       <p>
         <Label
           className="form__label form__label--result"
-          title="Kwota:" />
+          title="Kwota w PLN:" />
         <Input setAmount={setAmount} amount={amount} />
       </p>
       <p>
@@ -37,7 +37,7 @@ export const Form = (
       </p>
       <Label
         className="form__label form__label--result"
-        title="Przelicznik na PLN:"
+        title="Przelicznik na podaną walutę:"
         extraContent={<strong className="form__label--amount">{result}</strong>}
       />
       <LastUpdatedData apiLastDate={apiLastDate} />

@@ -11,6 +11,8 @@ const useApiHook = () => {
       const responseToJson = await response.json();
       const valuesData = responseToJson.data
 
+      console.log(valuesData)
+
       setApiCurrenciesData(Object.values(valuesData))
       setApiLastDate(responseToJson.meta.last_updated_at)
     }
