@@ -5,7 +5,7 @@ import { Form } from "./Form";
 function App() {
 
   const [apiCurrencies, setApiCurrencies] = useState([])
-  const [currency, setCurrency] = useState("Euro");
+  const [currency, setCurrency] = useState("CAD");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
 
@@ -29,13 +29,14 @@ function App() {
   }
 
   const calculateResult = () => {
-    const selectedCurrency = apiCurrencies.find(({ name }) => name === currency);
+    const selectedCurrency = apiCurrencies.find(({ code }) => code === currency);
+    const finalResult = amount * selectedCurrency.value
 
     const positiveValue = () => {
       if (amount <= 0) {
         return
       }
-      return amount * selectedCurrency.rate
+      return finalResult.toFixed(2)
     }
 
     if (!selectedCurrency) {
