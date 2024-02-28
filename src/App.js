@@ -5,16 +5,21 @@ import { Form } from "./Form";
 function App() {
 
   const [apiCurrencies, setApiCurrencies] = useState([])
-  const [currency, setCurrency] = useState();
+  const [currency, setCurrency] = useState("Euro");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
+
+  console.log(apiCurrencies)
+
+  
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("/currency-converter-react/currency.json");
       const responseToJson = await response.json();
+      const valuesData = responseToJson.data
 
-      setApiCurrencies(responseToJson)
+      setApiCurrencies(Object.values(valuesData))
     }
     fetchData();
   }, []);
