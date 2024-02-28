@@ -40,11 +40,11 @@ export const Form = (
         title="Przelicznik na PLN:"
         extraContent={<strong className="form__label--amount">{result}</strong>}
       />
+      <LastUpdatedData apiLastDate={apiLastDate} />
       <Buttons
         calculateResult={calculateResult}
         resetForm={resetForm}
       />
-      <LastUpdatedData apiLastDate={apiLastDate} />
     </form >
   )
 };
