@@ -35,23 +35,30 @@ export const GlobalStyle = createGlobalStyle`
 
     .form__label {
     padding-left: 20px;
+    padding-right: 10px;
     }
 
+    .form__fields{
+    display: flex;
+    flex-direction: column;
+    }
+
+    .form__select{
+      background-color: #0000000d;
+      border: solid black;
+      height: 30px;
+      width: 230px;
+      padding-left: 5px;
+      max-width: 100%;
+      margin-left: 44px;
+    }
+    
     .form__field {
     background-color: #0000000d;
     border: solid black;
-    margin-left: 55px;
     height: 30px;
     width: 230px;
     padding-left: 5px;
     max-width: 100%;
-    }
-
-    .form__field--value {
-    margin-left: 10px;
-    }
-
-    .form__label--amount {
-    padding-left: 5px;
     }
 `

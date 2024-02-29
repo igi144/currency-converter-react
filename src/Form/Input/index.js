@@ -1,7 +1,7 @@
 export const Input = ({setAmount, amount}) => (
     <input
         type="number"
-        className="form__field form__field--value"
+        className="form__field"
         min="0.1"
         step="any"
         value={amount}
