@@ -8,3 +8,7 @@ padding: 30px;
 export const WarningText = styled.p`
 color: red;
 `
+export const WaitingText = styled.p`
+color: green
+`
+
