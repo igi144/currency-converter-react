@@ -7,7 +7,7 @@ export const AlternativeAppView = () => {
         <AlternativeAppViewStyle>
             <Clock />
             <h1 className="form__header">Kalkulator waluty Euro na PLN</h1>
-            <WarningText>Coś jest nie tak z połączeniem internetowym 😒</WarningText>
+            <WarningText>Coś jest nie tak z Twoim połączeniem internetowym. 😒</WarningText>
         </AlternativeAppViewStyle >
     )
 };
