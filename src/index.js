@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -18,16 +18,14 @@ promise.then(response => {
           <AlternativeAppView />
         </React.StrictMode>
       )
-
     }
     else {
       root.render(
         <React.StrictMode>
           <GlobalStyle />
-          <LoadingAppView/>
+          <LoadingAppView />
         </React.StrictMode>
       )
-
       setTimeout(() => {
         root.render(
           <React.StrictMode>
@@ -36,15 +34,12 @@ promise.then(response => {
           </React.StrictMode>
         )
       }, 1000)
-
     }
   }
   catch (error) {
     console.error(error)
   }
-})
-
-
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
