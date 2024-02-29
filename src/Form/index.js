@@ -15,14 +15,14 @@ export const Form = (
     amount,
     onFormSubmit,
     apiCurrenciesData,
-    apiLastDate
+    apiLastDate,
   }
 ) => {
-
   return (
     <form className="form" onSubmit={onFormSubmit}>
       <Clock />
       <h1 className="form__header">Kalkulator waluty Euro na PLN</h1>
+
       <p>
         <Label
           className="form__label form__label--result"

@@ -8,18 +8,25 @@ const useApiHook = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("/currency-converter-react/currency.json");
-      const responseToJson = await response.json();
-      const valuesData = responseToJson.data
 
-      console.log(valuesData)
+      try {
+        if (!response.ok) {
+        }
+        else {
+          const responseToJson = await response.json();
+          const valuesData = responseToJson.data
 
-      setApiCurrenciesData(Object.values(valuesData))
-      setApiLastDate(responseToJson.meta.last_updated_at)
+          setApiCurrenciesData(Object.values(valuesData))
+          setApiLastDate(responseToJson.meta.last_updated_at)
+        }
+      }
+      catch (error) {
+        console.error(error)
+      }
     }
     fetchData();
   }, []);
-
-  return { apiCurrenciesData, apiLastDate }
+  return { apiCurrenciesData, apiLastDate, }
 }
 
 function App() {
@@ -27,7 +34,7 @@ function App() {
   const [currency, setCurrency] = useState("CAD");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState("");
-  const { apiCurrenciesData, apiLastDate } = useApiHook()
+  const { apiCurrenciesData, apiLastDate} = useApiHook()
 
   const onFormSubmit = (event) => {
     event.preventDefault();
