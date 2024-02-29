@@ -6,7 +6,7 @@ import { GlobalStyle } from "./myGlobalStyles";
 import { AlternativeAppView } from "./AlternativeAppView";
 import { LoadingAppView } from './LoadingAppView';
 
-const promise = fetch("/currency-converter-react/currency.json")
+const promise = fetch("https://api.currencyapi.com/v3/latest?apikey=cur_live_kbeBm4WrGxVb1nzxWeQ9hNihARpTmeimq1jC8DIG&currencies=EUR%2CUSD%2CCAD&base_currency=PLN")
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 promise.then(response => {
